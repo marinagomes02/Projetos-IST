@@ -144,13 +144,11 @@ int main(int argc, char* argv[]) {
     if (argc != 4) { 
         printf("Number of arguments invalid.\n");
         exit(EXIT_FAILURE);
-    }   
+    }       
 
-    clock_t begin = clock();
-   
     /* init filesystem */
     init_fs();
-
+    
     /* opening the input and output files */
     FILE *input, *output;
     
@@ -162,6 +160,7 @@ int main(int argc, char* argv[]) {
 
     output = fopen(argv[2],"w");
 
+    clock_t begin = clock();   
 
     /* process input and print tree */
     processInput(input);
