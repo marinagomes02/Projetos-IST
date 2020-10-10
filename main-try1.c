@@ -138,14 +138,22 @@ void applyCommands(){
 }
 
 int main(int argc, char* argv[]) {
-    clock_t begin = clock();
 
+    /* verify if number of arguments is right */
+    /* !! mudar p 5 dps de implementar o ultimo parametro !! */
+    if (argc != 4) { 
+        printf("Number of arguments invalid.\n");
+        exit(EXIT_FAILURE);
+    }   
+
+    clock_t begin = clock();
+   
     /* init filesystem */
     init_fs();
 
-    FILE *input, *output;
-
     /* opening the input and output files */
+    FILE *input, *output;
+    
     input = fopen(argv[1],"r");
 
     if (input == NULL) {
